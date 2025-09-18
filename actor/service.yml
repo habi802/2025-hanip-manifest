@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hanip-actor
-  namespace: hanip
+  namespace: app
   labels:
     app: hanip-actor
 spec:
