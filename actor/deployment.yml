@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hanip-actor-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hanip-actor
+  template:
+    metadata:
+      labels:
+        app: hanip-actor
+    spec:
+      containers:
+      - name: hanip-actor
+        image: harbor.greenart.n-e.kr/hanip/actor:1
+        ports:
+          - containerPort: 8080
+        volumeMounts:
+          - name: host-volume
+            mountPath: /home/download
+      volumes:
+        - name: host-volume
+          hostPath:
+            path: /home/green/download
+            type: DirectoryOrCreate      
+      imagePullSecrets:
+      - name: harbor-creds
+      serviceAccountName: spring-gateway
