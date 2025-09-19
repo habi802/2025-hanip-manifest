@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: front-app-deployment
 spec:
-  replicas: 6
+  replicas: 1
   selector:
     matchLabels:
       app: front-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: front-app
-        image: harbor.greenart.n-e.kr/hanip/front:1
+        image: harbor.greenart.n-e.kr/hanip/front:6
         ports:
         - containerPort: 80
       imagePullSecrets:
