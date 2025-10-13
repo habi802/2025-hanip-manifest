@@ -1,3 +1,3 @@
 kustomize:
   images:
-  - harbor.greenart.n-e.kr/hanip/action:23
+  - harbor.greenart.n-e.kr/hanip/action:24
